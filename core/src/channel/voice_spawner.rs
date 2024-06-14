@@ -19,7 +19,7 @@ impl VoiceSpawnerMatrix {
         let mut voice_spawners_attack = Vec::new();
         let mut voice_spawners_release = Vec::new();
 
-        for _ in 0..(128 * 128) {
+        for _ in 0..(256 * 256) {
             voice_spawners_attack.push(Vec::new());
             voice_spawners_release.push(Vec::new());
         }
@@ -35,12 +35,12 @@ impl VoiceSpawnerMatrix {
 
     #[inline(always)]
     fn get_spawners_index_at_attack(&self, key: u8, vel: u8) -> usize {
-        key as usize + vel as usize * 128
+        key as usize + vel as usize * 256
     }
 
     #[inline(always)]
     fn get_spawners_index_at_release(&self, key: u8, vel: u8) -> usize {
-        key as usize + vel as usize * 128
+        key as usize + vel as usize * 256
     }
 
     #[inline(always)]
